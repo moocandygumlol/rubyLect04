@@ -1,0 +1,615 @@
+Started GET "/main/test" for ::1 at 2022-09-01 14:50:22 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 1.5ms | Allocations: 2329)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 2442)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 7007)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Main#test</h1>
+<p>Find me in app/views/main/test.html.erb</p>
+<%= form_with action: 'home', method: 'post', data: {turbo: false} do |form| %>
+  <%= form.submit :xxxx
+<% end %>
+
+):
+1:    <h1>Main#test</h1>
+2:    <p>Find me in app/views/main/test.html.erb</p>
+3:    <%= form_with action: 'home', method: 'post', data: {turbo: false} do |form| %>
+4:      <%= form.submit :xxxx
+5:    <% end %>
+  
+app/views/main/test.html.erb:5: syntax error, unexpected '<', expecting ')'
+app/views/main/test.html.erb:8: syntax error, unexpected end-of-input, expecting `end'
+app/views/main/test.html.erb:5: syntax error, unexpected '<', expecting ')'
+app/views/main/test.html.erb:8: syntax error, unexpected end-of-input, expecting `end'
+app/views/main/test.html.erb:5: syntax error, unexpected '<', expecting ')'
+app/views/main/test.html.erb:8: syntax error, unexpected end-of-input, expecting `end'
+app/views/main/test.html.erb:5: syntax error, unexpected '<', expecting ')'
+app/views/main/test.html.erb:8: syntax error, unexpected end-of-input, expecting `end'
+app/views/main/test.html.erb:5: syntax error, unexpected '<', expecting ')'
+app/views/main/test.html.erb:8: syntax error, unexpected end-of-input, expecting `end'
+app/views/main/test.html.erb:5: syntax error, unexpected '<', expecting ')'
+app/views/main/test.html.erb:8: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/main/test" for ::1 at 2022-09-01 14:50:47 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1383)
+  Rendered layout layouts/application.html.erb (Duration: 130.4ms | Allocations: 91864)
+Completed 200 OK in 133ms (Views: 132.2ms | ActiveRecord: 0.0ms | Allocations: 92765)
+
+
+Started POST "/main/test" for ::1 at 2022-09-01 14:50:49 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/main/test"):
+  
+Started GET "/main/home" for ::1 at 2022-09-01 14:51:29 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/main/home"):
+  
+Started GET "/main/test" for ::1 at 2022-09-01 14:51:32 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 1.5ms | Allocations: 778)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3372)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4190)
+
+
+Started POST "/main/home" for ::1 at 2022-09-01 14:51:34 +0700
+Processing by MainController#home as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"xxxx"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 771)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/main/home" for ::1 at 2022-09-01 14:53:03 +0700
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MainController#home as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"xxxx"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  Rendered main/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 355)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 35698)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 39044)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 14:54:44 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.3ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3456)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4334)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 14:57:31 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 20.0ms | Allocations: 9322)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 9427)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 10271)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with url: "home", method: :post data: {turbo: false} do |form| %>
+  <%= form.label :query, "Subject :" %>
+  <%= form.text_field :sub1 %>
+  <%= form.text_field :sub2 %>
+  <%= form.text_field :sub3 %>
+  <%= form.label :query, "Subject :" %>
+  <%= form.text_field :grd1 %>
+  <%= form.text_field :grd2 %>
+  <%= form.text_field :grd3 %>
+  <%= form.submit "Search" %>
+<% end %>
+):
+1:    
+2:    <%= form_with url: "home", method: :post data: {turbo: false} do |form| %>
+3:      <%= form.label :query, "Subject :" %>
+4:      <%= form.text_field :sub1 %>
+5:      <%= form.text_field :sub2 %>
+6:      <%= form.text_field :sub3 %>
+7:      <%= form.label :query, "Subject :" %>
+8:      <%= form.text_field :grd1 %>
+9:      <%= form.text_field :grd2 %>
+10:      <%= form.text_field :grd3 %>
+11:      <%= form.submit "Search" %>
+12:    <% end %>
+  
+app/views/main/test.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/main/test.html.erb:2: syntax error, unexpected `do', expecting `end'
+app/views/main/test.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/main/test.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/main/test.html.erb:2: syntax error, unexpected `do', expecting `end'
+app/views/main/test.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/main/test.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/main/test.html.erb:2: syntax error, unexpected `do', expecting `end'
+app/views/main/test.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/main/test.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/main/test.html.erb:2: syntax error, unexpected `do', expecting `end'
+app/views/main/test.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/main/test.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/main/test.html.erb:2: syntax error, unexpected `do', expecting `end'
+app/views/main/test.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+app/views/main/test.html.erb:2: syntax error, unexpected local variable or method, expecting `end'
+app/views/main/test.html.erb:2: syntax error, unexpected `do', expecting `end'
+app/views/main/test.html.erb:14: syntax error, unexpected `end', expecting end-of-input
+Started GET "/main/test" for ::1 at 2022-09-01 14:57:54 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 6.0ms | Allocations: 5110)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 7750)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 8593)
+
+
+Started POST "/main/home" for ::1 at 2022-09-01 14:57:59 +0700
+Processing by MainController#home as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home.html.erb within layouts/application
+  Rendered main/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 122)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2529)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 2896)
+
+
+Started POST "/main/home" for ::1 at 2022-09-01 14:58:50 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/main/home"):
+  
+Started GET "/main/test" for ::1 at 2022-09-01 14:58:56 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.1ms | Allocations: 4336)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 18137)
+Completed 200 OK in 13ms (Views: 12.7ms | Allocations: 18793)
+
+
+Started POST "/main/home" for ::1 at 2022-09-01 14:58:57 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/main/home"):
+  
+Started GET "/main/home" for ::1 at 2022-09-01 14:59:04 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/main/home"):
+  
+Started GET "/main/test" for ::1 at 2022-09-01 14:59:07 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.4ms | Allocations: 4330)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 18174)
+Completed 200 OK in 17ms (Views: 16.4ms | Allocations: 18830)
+
+
+Started POST "/main/home" for ::1 at 2022-09-01 14:59:08 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/main/home"):
+  
+Started POST "/main/home" for ::1 at 2022-09-01 14:59:22 +0700
+  
+ActionController::RoutingError (No route matches [POST] "/main/home"):
+  
+Started GET "/main/test" for ::1 at 2022-09-01 14:59:27 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4634)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 7225)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 8002)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 14:59:28 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4176)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6375)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 6642)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 14:59:28 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.6ms | Allocations: 4162)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 6376)
+Completed 200 OK in 6ms (Views: 5.9ms | Allocations: 6625)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 14:59:29 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+No template found for MainController#home_post, rendering head :no_content
+Completed 204 No Content in 2ms (Allocations: 322)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 14:59:31 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+No template found for MainController#home_post, rendering head :no_content
+Completed 204 No Content in 1ms (Allocations: 122)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 14:59:31 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+No template found for MainController#home_post, rendering head :no_content
+Completed 204 No Content in 1ms (Allocations: 122)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 14:59:32 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+No template found for MainController#home_post, rendering head :no_content
+Completed 204 No Content in 1ms (Allocations: 122)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 14:59:33 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+No template found for MainController#home_post, rendering head :no_content
+Completed 204 No Content in 1ms (Allocations: 122)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:00:15 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4636)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 7219)
+Completed 200 OK in 9ms (Views: 8.3ms | Allocations: 8026)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:00:16 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.8ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2538)
+Completed 200 OK in 8ms (Views: 7.1ms | Allocations: 2857)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:06:54 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 1.3ms | Allocations: 4611)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 18653)
+Completed 200 OK in 8ms (Views: 8.1ms | Allocations: 19635)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:06:56 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4180)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6387)
+Completed 200 OK in 7ms (Views: 6.8ms | Allocations: 6652)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:07:02 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"gqeriuvgh", "sub2"=>"iuqgv", "sub3"=>"ougqv", "grd1"=>"12", "grd2"=>"14", "grd3"=>"12", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 1.3ms | Allocations: 138)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2553)
+Completed 200 OK in 9ms (Views: 7.7ms | Allocations: 2887)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:09:36 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 1.1ms | Allocations: 4600)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 18654)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 19636)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:09:42 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"gqergq", "sub2"=>"iqbgv", "sub3"=>"ibg", "grd1"=>"12", "grd2"=>"14", "grd3"=>"16", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 1.0ms | Allocations: 154)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 2560)
+Completed 200 OK in 9ms (Views: 7.8ms | Allocations: 2912)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:10:04 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"gqergq", "sub2"=>"iqbgv", "sub3"=>"ibg", "grd1"=>"12", "grd2"=>"14", "grd3"=>"16", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.7ms | Allocations: 181)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3046)
+Completed 200 OK in 10ms (Views: 8.4ms | Allocations: 3879)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:11:02 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"gqergq", "sub2"=>"iqbgv", "sub3"=>"ibg", "grd1"=>"12", "grd2"=>"14", "grd3"=>"16", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.7ms | Allocations: 190)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3054)
+Completed 200 OK in 11ms (Views: 9.7ms | Allocations: 3906)
+
+
+Started GET "/main/tedt" for ::1 at 2022-09-01 15:11:20 +0700
+  
+ActionController::RoutingError (No route matches [GET] "/main/tedt"):
+  
+Started GET "/main/test" for ::1 at 2022-09-01 15:11:22 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 1.8ms | Allocations: 4605)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 18656)
+Completed 200 OK in 15ms (Views: 13.5ms | Allocations: 19594)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:11:24 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"", "sub2"=>"", "sub3"=>"", "grd1"=>"", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.9ms | Allocations: 157)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2554)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 2906)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:11:31 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"vwqvq", "sub2"=>"", "sub3"=>"", "grd1"=>"vqwvq", "grd2"=>"", "grd3"=>"", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.5ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2422)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 2695)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:12:24 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 1.2ms | Allocations: 4607)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 18663)
+Completed 200 OK in 9ms (Views: 8.6ms | Allocations: 19645)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:13:34 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4650)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 7234)
+Completed 200 OK in 9ms (Views: 7.4ms | Allocations: 8060)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:13:46 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"rgvbqekhfb", "sub2"=>"kjbqfgv", "sub3"=>"kjqbfv", "grd1"=>"12 ", "grd2"=>"13", "grd3"=>"14", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.9ms | Allocations: 156)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2554)
+Completed 200 OK in 8ms (Views: 6.4ms | Allocations: 2906)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:15:35 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4633)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 7224)
+Completed 200 OK in 12ms (Views: 11.2ms | Allocations: 8033)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:16:05 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4643)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 7225)
+Completed 200 OK in 9ms (Views: 7.5ms | Allocations: 8052)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:17:31 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.6ms | Allocations: 6990)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 9574)
+Completed 200 OK in 10ms (Views: 8.7ms | Allocations: 10401)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:17:41 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.8ms | Allocations: 4561)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 7148)
+Completed 200 OK in 11ms (Views: 10.4ms | Allocations: 7975)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:17:57 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.5ms | Allocations: 4547)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 7132)
+Completed 200 OK in 10ms (Views: 9.1ms | Allocations: 7959)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:18:32 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.2ms | Allocations: 4563)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 7141)
+Completed 200 OK in 10ms (Views: 8.6ms | Allocations: 7968)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:18:47 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.1ms | Allocations: 4563)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 7146)
+Completed 200 OK in 12ms (Views: 11.2ms | Allocations: 7973)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:18:58 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4570)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 7156)
+Completed 200 OK in 9ms (Views: 8.4ms | Allocations: 7982)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:19:04 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4572)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 7156)
+Completed 200 OK in 9ms (Views: 8.2ms | Allocations: 7983)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:19:20 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.2ms | Allocations: 4556)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 7143)
+Completed 200 OK in 13ms (Views: 12.2ms | Allocations: 7970)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:19:52 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.3ms | Allocations: 4637)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 7223)
+Completed 200 OK in 9ms (Views: 8.4ms | Allocations: 8049)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:20:45 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 3.6ms | Allocations: 4632)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 7214)
+Completed 200 OK in 10ms (Views: 8.9ms | Allocations: 8041)
+
+
+Started GET "/main/test" for ::1 at 2022-09-01 15:20:55 +0700
+Processing by MainController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering main/test.html.erb within layouts/application
+  Rendered main/test.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4647)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 7241)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 8068)
+
+
+Started POST "/main/home_post" for ::1 at 2022-09-01 15:21:10 +0700
+Processing by MainController#home_post as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "sub1"=>"vqrvq", "grd1"=>"12", "sub2"=>"fvkjqbr", "grd2"=>"14", "sub3"=>"max guy", "grd3"=>"16", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering main/home_post.html.erb within layouts/application
+  Rendered main/home_post.html.erb within layouts/application (Duration: 0.9ms | Allocations: 156)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2555)
+Completed 200 OK in 8ms (Views: 6.5ms | Allocations: 2906)
+
+

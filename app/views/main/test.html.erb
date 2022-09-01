@@ -1,0 +1,23 @@
+<%= form_with url: "home_post", method: :post , data: {turbo: false} do |form| %>
+  <table style = "margin: auto; margin-top: 2rem; text-align: center">
+    <tr>
+      <td><%= form.label :query, "Subject :" %></td>
+      <td><%= form.label :query, "Score :" %></td>
+    </tr>
+    <tr>
+      <td><%= form.text_field :sub1 %></td>
+      <td><%= form.text_field :grd1 %></td></tr>
+    </tr>
+    <tr>
+      <td><%= form.text_field :sub2 %></td>
+      <td><%= form.text_field :grd2 %></td></tr>
+    </tr>
+    <tr>
+      <td><%= form.text_field :sub3 %></td>
+      <td><%= form.text_field :grd3 %></td></tr>
+    </tr>
+  </table>
+  <div style = "text-align: center; margin-top: 1rem;">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>
